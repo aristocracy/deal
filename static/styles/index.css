@@ -151,25 +151,24 @@ view.content main div.pnp span{
 	font-size:14px;
 }
 view.content main div.pay {
-	height:50px;
-	display: flex;
-	line-height: 50px;
-	padding: 5px;
-	justify-content: space-between;
-	align-items: start;
+	padding:5px;
 }
-view.content main div.pay div.wechat{
-	display: flex;
-	justify-content: start;
-	
+view.content main div.pay label.payWayList{
+	display:flex;
+	justify-content:space-between;
+	align-items: center;
 }
-view.content main div.pay div.wechat div.logo{
-	width: 40px;
+view.content main div.pay label.payWayList image.payIcon{
+	width:40px;
 	height:40px;
-	background: url("../wechatpay.png") no-repeat;
-	background-size: contain;
-	margin-right: 5px;
-	margin-top: 5px;
+}
+view.content main div.pay label.payWayList view.pict{
+	display:flex;
+	justify-content:start;
+	align-items: center;
+}
+view.content main div.pay label.payWayList view.pict text{
+	text-indent: 5px;
 }
 view.content footer{
 	padding: 10px;

@@ -61,11 +61,19 @@
 			</div>
 			<div class="pnp">
 				<div>号码保护<icon type="info" size="14" /><span> 隐藏收件人真实手机号，保护隐私</span></div>
-				<div><label><checkbox value="cb" :checked="pripnp" /></label></div>
+				<div>
+					<label><checkbox @click="pnpt" value="protectPhoneNumber" :checked="pripnp" /></label>
+				</div>
 			</div>
 			<div class="pay">
-				<div class="wechat"><div class="logo"></div><text>微信支付</text></div>
-				<div><label><checkbox value="cb" :checked="pripnp" /></label></div>
+				<radio-group @change="payWay">
+					<label class="payWayList" v-for="(item, index) in payType" :key="item.value">
+						<view class="pict"><image :class="'payIcon '+item.value " :src="item.icon"></image><text>{{item.name}}</text></view>
+						<view>
+							<radio :value="item.value" :checked="index === payWaySelected" />
+						</view>
+					</label>
+				</radio-group>
 			</div>
 		</main>
 		<footer>
@@ -82,6 +90,19 @@
 	const prc= readonly(3.01);
 	const count=ref(1);
 	const pripnp=ref(true);
+	const payType = ref([
+		{
+			name:"微信支付",
+			value:"wechat",
+			icon:"../../static/wechatpay.png",
+		},
+		{
+			name:"支付宝",
+			value:"alipay",
+			icon:"../../static/alipay.png",
+		},
+	]);
+	const payWaySelected = ref(0);
 	const price=computed(()=>(prc*count.value).toFixed(2));
 	const goback= () => {
 		console.log("go back");
@@ -102,6 +123,17 @@
 	};
 	const submitp=()=>{
 		console.log("submitp");
+	};
+	const pnpt = () => {
+		pripnp.value=!pripnp.value;
+	};
+	const payWay = (evt)=> {
+		for (let i = 0; i < payType.value.length; i++) {
+			if (payType.value.value === evt.detail.value) {
+				payWaySelected.value = i;
+				break;
+			}
+		}
 	};
 </script>
 
