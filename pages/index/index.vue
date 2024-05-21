@@ -60,8 +60,8 @@
 				</div>
 			</div>
 			<div class="pnp">
-				<div>号码保护<icon type="info" size="14" /> 隐藏收件人真实手机号，保护隐私</div>
-				<label><checkbox value="cb" :checked="pripnp" />xxx</label>
+				<div>号码保护<icon type="info" size="14" /><span> 隐藏收件人真实手机号，保护隐私</span></div>
+				<div><label><checkbox value="cb" :checked="pripnp" /></label></div>
 			</div>
 			<div class="pay">
 				<div class="wechat"><div class="logo"></div><text>微信支付</text></div>
@@ -102,7 +102,7 @@
 	};
 	const submitp=()=>{
 		console.log("submitp");
-	}
+	};
 </script>
 
 <style scoped>
