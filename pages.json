@@ -3,15 +3,39 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+					"animationType": "pop-in",
+					"animationDuration": 300
+				}
+			}
+		},
+		{
+			"path": "pages/address/index",
+			"style": {
+				"navigationBarTitleText": "收货地址",
+				"autoBackButton":true,
+				"app-plus": {
+					"animationType": "pop-in",
+					"animationDuration": 300
+				}
+			}
+		},
+		{
+			"path" : "pages/newAddress/newAddress",
+			"style" : 
+			{
+				"navigationBarTitleText" : "新建地址"
 			}
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		
 	},
-	"uniIdRouter": {}
+	"uniIdRouter": {},
+	"easycom": {
+	  "autoscan": true
+	}
 }

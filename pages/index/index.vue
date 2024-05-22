@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<header class="header">
-			<div class="return" @click="goback"><span>&lt;</span></div>
+			<div class="return" @click="goback"><span><uni-icons type="left" size="25" /></span></div>
 			<div class="title"><text>确认订单</text></div>
 		</header>
 		<main>
@@ -11,7 +11,9 @@
 					<b>xxxxxxxxxx</b>
 					<p>张三 15000000000</p>
 				</div>
-				<div class="chgaddr" @click="chgaddr"><span>&gt;</span></div>
+				<div class="chgaddr" @click="chgaddr">
+					<uni-icons type="right" size="25"></uni-icons>
+				</div>
 			</div>
 			<div class="good">
 				<div class="store">
@@ -49,7 +51,7 @@
 					<span>订单运费</span><span>包邮</span>
 				</div>
 				<div class="trsi dtc">
-					<span class="trsii">运费险 <icon type="info" size="14" /></span><span>商家赠送，可抵x元退货运费</span>
+					<span class="trsii">运费险<uni-icons type="help" size="16" /></span><span>商家赠送，可抵x元退货运费</span>
 				</div>
 				<div class="pld dtc">
 					<div>平台优惠 <span style="color:red;">xxxx</span></div>
@@ -60,7 +62,7 @@
 				</div>
 			</div>
 			<div class="pnp">
-				<div>号码保护<icon type="info" size="14" /><span> 隐藏收件人真实手机号，保护隐私</span></div>
+				<div>号码保护<uni-icons type="help" size="16" /><span> 隐藏收件人真实手机号，保护隐私</span></div>
 				<div>
 					<label><checkbox @click="pnpt" value="protectPhoneNumber" :checked="pripnp" /></label>
 				</div>
@@ -108,10 +110,14 @@
 		console.log("go back");
 	};
 	const chgaddr= () => {
-		console.log("change addr");
+		uni.navigateTo({
+			url:"/pages/address/index",
+			animationType:"pop-in",
+			animationDuration:1000
+		});
 	};
 	const decend = () =>{
-		if(count.value>0){
+		if(count.value>1){
 			count.value-=1;
 		}
 	};
