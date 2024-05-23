@@ -16,7 +16,7 @@
 			"path": "pages/address/index",
 			"style": {
 				"navigationBarTitleText": "收货地址",
-				"autoBackButton":true,
+				"autoBackButton": true,
 				"app-plus": {
 					"animationType": "pop-in",
 					"animationDuration": 300
@@ -24,18 +24,15 @@
 			}
 		},
 		{
-			"path" : "pages/newAddress/newAddress",
-			"style" : 
-			{
-				"navigationBarTitleText" : "新建地址"
+			"path": "pages/newAddress/newAddress",
+			"style": {
+				"navigationBarTitleText": "新建地址"
 			}
 		}
 	],
-	"globalStyle": {
-		
-	},
+	"globalStyle": {},
 	"uniIdRouter": {},
 	"easycom": {
-	  "autoscan": true
+		"autoscan": true
 	}
 }

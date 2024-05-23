@@ -7,9 +7,14 @@
 		<main>
 			<div class="address">
 				<div class="addr">
-					<p>xx省xx市xx区xx街道</p>
-					<b>xxxxxxxxxx</b>
-					<p>张三 15000000000</p>
+					<template v-if="Object.keys(raddr).length>0">
+						<p>{{raddr.zone}}</p>
+						<b>{{raddr.address}}</b>
+						<p>{{raddr.name}} {{raddr.phone}}</p>
+					</template>
+					<template v-else>
+						<p>请设置一个收获地址</p>
+					</template>
 				</div>
 				<div class="chgaddr" @click="chgaddr">
 					<uni-icons type="right" size="25"></uni-icons>
@@ -88,10 +93,11 @@
 </template>
 
 <script setup>
-	import {ref,readonly,computed} from "vue";
-	const prc= readonly(3.01);
+	import {ref,readonly,computed,onBeforeMount} from "vue";
+	const prc= readonly(ref(3.01));
 	const count=ref(1);
 	const pripnp=ref(true);
+	let raddr = ref({});
 	const payType = ref([
 		{
 			name:"微信支付",
@@ -105,7 +111,13 @@
 		},
 	]);
 	const payWaySelected = ref(0);
-	const price=computed(()=>(prc*count.value).toFixed(2));
+	const price=computed(()=>(prc.value*count.value).toFixed(2));
+	onBeforeMount(()=>{
+		let caddr=uni.getStorageSync("chooseAddr");
+		if(caddr){
+			raddr=ref(caddr);
+		}
+	});
 	const goback= () => {
 		console.log("go back");
 	};
@@ -113,7 +125,12 @@
 		uni.navigateTo({
 			url:"/pages/address/index",
 			animationType:"pop-in",
-			animationDuration:1000
+			animationDuration:1000,
+			events:{
+				acceptDataFromAddressList:(data)=>{
+					raddr.value = data;
+				}
+			}
 		});
 	};
 	const decend = () =>{
