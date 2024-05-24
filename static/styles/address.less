@@ -1,0 +1,44 @@
+view.address{
+	background-color: #eee;
+	padding:0 10px;
+	div.addrs{
+		width:100%;
+		height:calc(100vh - 104px);
+		uni-scroll-view.scrview{
+			height:98%;
+		}
+		view.addrCard{
+			margin-top:10px;
+			background-color: #fff;
+			border-radius: 5px;
+			view.adinfo,view.adct{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding:5px;
+				text.def{
+					color:rgb(0, 122, 255);
+				}
+				text.nodef{
+					color:#ccc;
+				}
+				text,span{
+					font-size: 14px;
+				}
+				div.adact{
+					span{
+						margin-right:5px;
+						color:#ccc;
+					}
+				}
+			}
+			view.adcom{
+				border-bottom: 1px solid #ccc;
+			}
+		}
+	}
+	div.addres{
+		width:100%;
+		height:calc(100vh - 607px);
+	}
+}
