@@ -97,7 +97,7 @@
 		}
 		uni.setStorageSync("addrList",addrlist.value);
 		uni.navigateBack({
-			url:"../index/index"
+			url:"../deal/deal"
 		});
 	};
 	const deleteAddr = (id) =>{

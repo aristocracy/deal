@@ -13,6 +13,18 @@
 			}
 		},
 		{
+			"path": "pages/deal/deal",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+					"animationType": "pop-in",
+					"animationDuration": 300
+				}
+			}
+		},
+		{
 			"path": "pages/address/index",
 			"style": {
 				"navigationBarTitleText": "收货地址",
